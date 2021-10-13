@@ -34,6 +34,7 @@
     <div>{{ athis() }} eeee {{ sss }},{{ c() }}</div>
     <div>,{{ getdata_cid }},</div>
     <div>,{{ str }},</div>
+    <div>测试上传</div>
   </div>
 </template>
 
