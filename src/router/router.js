@@ -15,6 +15,7 @@ import test from '@/pages/test.vue'
 import attrsTest from '@/pages/attrsTest.vue'
 import clickUrl from '@/pages/clickUrl.vue'
 import users from '@/pages/users.vue'
+import watchs from '@/pages/watchs.vue'
 
 import account from '@/pages/users/account.vue'
 import info from '@/pages/users/info.vue'
@@ -33,6 +34,7 @@ const routes = [
       { path: 'account', component: account },
     ],
   },
+  { path: '/watchs', component: watchs },
 ]
 const router = new VueRouter({
   mode: 'history',

@@ -1,6 +1,11 @@
 <!--  -->
 <template>
-  <div class="test">test test</div>
+  <div class="test">
+    <div>{{ athis() }} eeee {{ sss }},{{ c() }}</div>
+    <div>,{{ getdata_cid }},</div>
+    <div>,{{ str }},</div>
+    <div>测试上传3</div>
+  </div>
 </template>
 
 <script>
@@ -12,7 +17,23 @@ export default {
   },
   data() {
     return {
-      value: 'value_abc',
+      tests: 123,
+      cid: 444,
+      athis: () => {
+        // console.log('app this data')
+        // console.log(this.cid, 'app this data')
+        return this.sss //这里可以拿到数据
+      },
+      sss: 'ss',
+      c: function() {
+        // console.log(this) //
+        return function() {
+          // console.log(this) //
+          return 'erer'
+        }
+      },
+      getdata_cid: this.cid, //直接取不到
+      str: 'strstr',
     }
   },
   created() {},
