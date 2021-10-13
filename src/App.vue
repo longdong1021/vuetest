@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" style="width:20px;" src="@/assets/logo.png" />
+    <img alt="Vue logo" style="width: 20px" src="@/assets/logo.png" />
     <router-link to="/">home</router-link> |
     <router-link
       :to="{ path: `/news/${cid}/c/${cname}`, query: { name: 'waling' } }"
@@ -26,7 +26,7 @@
     <button @click="goUserCenterFn">去用户中心</button>
     <img
       alt="Vue logo"
-      style="width:20px;"
+      style="width: 20px"
       src="@/assets/images/coupon_icon_20210712.png"
     />
     <!-- <HelloWorld msg="1212121221" /> -->
@@ -34,7 +34,7 @@
     <div>{{ athis() }} eeee {{ sss }},{{ c() }}</div>
     <div>,{{ getdata_cid }},</div>
     <div>,{{ str }},</div>
-    <div>测试上传</div>
+    <div>测试上传2</div>
   </div>
 </template>
 
@@ -58,9 +58,9 @@ export default {
         return this.sss //这里可以拿到数据
       },
       sss: 'ss',
-      c: function() {
+      c: function () {
         console.log(this) //
-        return function() {
+        return function () {
           console.log(this) //
           return 'erer'
         }
