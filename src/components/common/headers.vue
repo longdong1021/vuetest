@@ -23,6 +23,8 @@
     |
     <router-link to="/attrstest">attrsTest</router-link>
     |
+    <router-link to="/computed">computed</router-link>
+    |
     <span @click="clickUrlFn">clickurl</span>
     <button @click="goUserCenterFn">去用户中心</button>
     <button @click="goWatchFn(1)">watchs 1</button>
@@ -32,6 +34,8 @@
       style="width: 20px"
       src="@/assets/images/coupon_icon_20210712.png"
     />
+    <router-link to="/watchExample">watch-example</router-link>
+    |
   </div>
 </template>
 
