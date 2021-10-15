@@ -2,8 +2,8 @@
 <template>
   <div id="watch-example">
     <p>
-      Ask a yes/no question:
-      <input v-model="question" />
+      问一个是/否问题：
+      <input v-model="questionVal" placeholder="请输入您的问题" />
     </p>
     <p>{{ answer }}</p>
   </div>
@@ -21,15 +21,15 @@ export default {
   components: {},
   data() {
     return {
-      question: '',
-      answer: 'I cannot give you an answer until you ask a question!',
+      questionVal: '',
+      answer: '在您提出问题之前，我无法给您答案！',
     }
   },
   watch: {
     // 如果 `question` 发生改变，这个函数就会运行
-    question: function(newQuestion, oldQuestion) {
+    questionVal: function(newQuestion, oldQuestion) {
       console.log(newQuestion, oldQuestion)
-      this.answer = 'Waiting for you to stop typing...'
+      this.answer = '等你停止打字...'
       this.debouncedGetAnswer()
     },
   },
@@ -43,19 +43,19 @@ export default {
   },
   methods: {
     getAnswer: function() {
-      if (this.question.indexOf('?') === -1) {
-        this.answer = 'Questions usually contain a question mark. ;-)'
+      if (this.questionVal.indexOf('?') === -1) {
+        this.answer = '问题通常包含一个问号. ;-)'
         return
       }
       this.answer = 'Thinking...'
       var vm = this
-      window.axios
+      this.$axios
         .get('https://yesno.wtf/api')
         .then(function(response) {
           vm.answer = window._.capitalize(response.data.answer)
         })
         .catch(function(error) {
-          vm.answer = 'Error! Could not reach the API. ' + error
+          vm.answer = '错误！ 无法访问 API。' + error
         })
     },
   },
